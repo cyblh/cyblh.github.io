@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>腾讯云安装Docker | 小陈书屋</title>
-  <meta name="keywords" content=" Docker ">
-  <meta name="description" content="腾讯云安装Docker | 小陈书屋">
+  <title>活着 | 小陈书屋</title>
+  <meta name="keywords" content=" 一些故事 ">
+  <meta name="description" content="活着 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="腾讯云安装Docker1.更新yum包 yum -y update  2.检测yum-utils状态 yum list installed | grep yum-utils  3.设置yum源： sudo yum-config-manager \     --add-repo \     https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docke">
 <meta property="og:type" content="article">
@@ -262,9 +262,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hz" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">腾讯云安装Docker</h1>
+        <h1 class="article-title">活着</h1>
     
     <div class="article-meta">
         
@@ -274,7 +274,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="折腾笔记">折腾笔记</a>
+            <a  data-rel="分享故事">分享故事</a>
             
         </span>
         
@@ -282,19 +282,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Docker</a>
+            <a class="color5">一些故事</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-01-26 19:40:57'>2022-01-26 12:12</time>
+            Created At : <time class="date" title='Updated At: 2022-01-26 21:18:21'>2021-11-26 19:55</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:150</span>
+        <span>Count:490</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -313,7 +313,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AE%89%E8%A3%85Docker"><span class="toc-text">腾讯云安装Docker</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -329,34 +329,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="腾讯云安装Docker"><a href="#腾讯云安装Docker" class="headerlink" title="腾讯云安装Docker"></a>腾讯云安装Docker</h1><p>1.更新yum包</p>
-<pre><code>yum -y update
-</code></pre>
-<p>2.检测yum-utils状态</p>
-<pre><code>yum list installed | grep yum-utils
-</code></pre>
-<p>3.设置yum源：</p>
-<pre><code>sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre>
-<p>4.安卓Docker Engine，验证是否安装成功，并启动</p>
-<pre><code>yum install -y docker-ce docker-ce-cli containerd.io  #第一条命令
-
-docker -v  #第二条命令
-
-systemctl start docker  #第三条命令
-</code></pre>
-<p>5.修改下载源，不修改会导致下载速度很慢</p>
-<pre><code>sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
-&#123;
-  &quot;registry-mirrors&quot;: [&quot;https://plut5gv2.mirror.aliyuncs.com&quot;]
-&#125;
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</code></pre>
+        <p>十七年前春节前夕的一个晚上，我们一家子缩在炮弹炉旁边烤火。</p>
+<p>我不知道发生了什么，只记得他们两个人突然喊得很大声，坐的板凳变成了趁手的武器。我妈把我抓起来穿上棉袄，只一推就把我送到了院子里，然后她转身投入战场去了。我的脑子还小到无法理解发生了什么。只记得雪很大，灌进脖子里很冷。天很黑，屋里的灯映出板凳飞舞的轮廓。邻居们出来了，他们看看屋子里又看看我。他们看我的眼神很尖，扎得我很疼。</p>
+<p>后来我大了就知道，家里很窘，用度成问题，官司缠身。打架是为了钱。但是我不懂，难道打一架就可以奇迹一样地从对方身上打出钱来。打架到底不能赚钱，我们还是很穷。他们到底离婚了，我感到很解脱。我妈带着我搬走了，那个男人没有给过我巴掌和胡扯以外的东西，我感到很解脱。但我还是对别人的眼睛过敏，这个毛病到现在我也没改掉，这让我痛苦。</p>
+<p>现在我大学即将毕业了，我突然知道那个男人手术失败瞎了一只眼。他现在很穷，无人照顾，再这样下去很有可能没有几年好活了，我心里很乱，我不知道该怎么办。我妈也是，她到底心软想要接他回来照顾。但是我不知道该用什么表情面对这一切。</p>
+<p>窗子外面天雾蒙蒙，雪点子轻轻敲打着窗户，落到地上搅和成一团烂泥。<br>活着真的很受罪。就像在烂泥里深一脚浅一脚的前进。往前望望一片黑。往后望望，每一个脚印里都灌满了眼泪。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>
