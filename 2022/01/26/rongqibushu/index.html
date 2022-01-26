@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>老屋 | 小陈书屋</title>
-  <meta name="keywords" content=" 一些故事 ">
-  <meta name="description" content="老屋 | 小陈书屋">
+  <title>Docker部署青龙、方舟容器 | 小陈书屋</title>
+  <meta name="keywords" content=" Docker ">
+  <meta name="description" content="Docker部署青龙、方舟容器 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="青龙部署1.拉取镜像，这里提供两个版本。 官方镜像：docker pull whyour&#x2F;qinglong:latest  个人备份：docker pull cyblh&#x2F;qinglong:latest  #官方2.10.13版本  2.命令部署 docker run -dit \ -v $pwd&#x2F;ql&#x2F;config:&#x2F;ql&#x2F;config \ -v $pwd&#x2F;ql&#x2F;log:&#x2F;ql&#x2F;log \ -v">
 <meta property="og:type" content="article">
@@ -282,9 +282,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-lw" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-rongqibushu" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">老屋</h1>
+        <h1 class="article-title">Docker部署青龙、方舟容器</h1>
     
     <div class="article-meta">
         
@@ -294,7 +294,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="分享故事">分享故事</a>
+            <a  data-rel="折腾笔记">折腾笔记</a>
             
         </span>
         
@@ -302,19 +302,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">一些故事</a>
+            <a class="color2">Docker</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-01-26 19:45:52'>2022-01-06 19:44</time>
+            Created At : <time class="date" title='Updated At: 2022-01-26 22:25:46'>2022-01-26 22:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:592</span>
+        <span>Count:992</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -333,7 +333,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%92%E9%BE%99%E9%83%A8%E7%BD%B2"><span class="toc-text">青龙部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BA%E5%85%B0%E9%83%A8%E7%BD%B2"><span class="toc-text">诺兰部署</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -349,16 +349,137 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>老屋已经彻底垮塌了。那是我童年生活的地方，我也在哪里经历了第一次别离。</p>
-<p>遥记那是2008年的夏天，奶奶去世了。小时顽劣，一天胡闹下来浑身都是汗。洗澡要坐在一个大锡盆中，在昏暗的屋檐下忍受成群结队的蚊子叮咬。有一个傍晚，奶奶追着让我洗澡，讨厌洗澡的我欺她年迈，脱口而出:“你死了我也不会流一滴眼泪。”</p>
-<p>谁能料到不久之后，急性糖尿病缠上了她。奶奶住院了，我被大人去看她。她躺在病床上却对我危险，还递给我葡萄和苹果。这是我的诅咒，是报应，当时的我害怕是因为我的出言不逊才让她遭此一劫。</p>
-<p>我一边剥着葡萄塞入嘴里，一边回想着以往。面条里面的荷包蛋，奶奶锁在柜子的劣质糖果，是童年里为数不多的甜蜜。酸甜的葡萄混杂着深深的愧疚，我坐在病床前不敢抬头。</p>
-<p>过了两天，得知她的死讯，只记得我坐在祠堂的高门槛上，泪如雨下。</p>
-<p>老屋和祠堂紧贴着，祠堂没有大门，只有高高供奉的菩萨和门槛。奶奶的冰柜就停在祠堂里，做白事的那些天，爷爷一直在沉默。</p>
-<p>爷爷是个篾匠，从我记事以来，他就编背篓和簸箕。我用他的蔑刀砍竹子，做宝剑。破竹子需要垫子，所以祠堂的木门槛到处都是刀痕。</p>
-<p>后来，我离开家乡去上学。听闻有人要买祠堂里的那个菩萨，说是鎏金的，出十万。家乡人不愿卖，第二天那个被香火熏得黑漆漆的菩萨就被偷走了。只剩一个空空的神龛每日接受供拜。</p>
-<p>再后来，爷爷也从老屋搬了出来。失去烟火气的老屋塌了，只剩下破砖残瓦，野草和青苔猛长。</p>
-<p>一次大雨，祠堂门口的水渠积攒的雨水清澈见底。我坐在屋檐下的青石板，赤足去拨弄水渠里的泥沙，像一尾游鱼不甘寂寞，让尘埃翻滚，浑浊了一渠清水，也浑浊了我的一生。</p>
+        <h2 id="青龙部署"><a href="#青龙部署" class="headerlink" title="青龙部署"></a>青龙部署</h2><p>1.拉取镜像，这里提供两个版本。</p>
+<pre><code>官方镜像：docker pull whyour/qinglong:latest
+
+个人备份：docker pull cyblh/qinglong:latest  #官方2.10.13版本
+</code></pre>
+<p>2.命令部署</p>
+<pre><code>docker run -dit \
+-v $pwd/ql/config:/ql/config \
+-v $pwd/ql/log:/ql/log \
+-v $pwd/ql/db:/ql/db \
+-v $pwd/ql/scripts:/ql/scripts \
+-p 5700:5700 \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--name qinglong \
+--hostname qinglong \
+--restart always \
+whyour/qinglong:latest
+cyblh/qinglong:latest  #备份镜像使用这里替换倒数第二行
+</code></pre>
+<p>Continue~</p>
+<h2 id="诺兰部署"><a href="#诺兰部署" class="headerlink" title="诺兰部署"></a>诺兰部署</h2><p>1.拉取镜像，这里提供两个版本。</p>
+<pre><code>官方镜像：docker pull nolanhzy/ark:latest
+
+个人备份：docker pull cyblh/ark:latest  #官方2.5版本
+</code></pre>
+<p>2.拉取源码</p>
+<pre><code>#国内用户
+git clone https://ghproxy.com/https://github.com/NNNNolan/Ark.git /root/Ark
+#国外用户
+git clone https://github.com/NNNNolan/Ark.git /root/Ark
+</code></pre>
+<p>3.增加配置</p>
+<pre><code>#cd到Ark目录
+cd /root/Ark  
+
+#新建Config文件夹并cd到Config目录
+mkdir -p Config &amp;&amp; cd Config  
+
+#移动到Ark安装目录
+cd /root/Art/Config  
+
+#修改配置文件
+vi Config.json
+</code></pre>
+<p>配置文件模板：</p>
+<pre><code>&#123;
+  ///浏览器最多几个网页
+  &quot;MaxTab&quot;: &quot;4&quot;,
+  //网站标题
+  &quot;Title&quot;: &quot;Ark&quot;,
+  //回收时间分钟 不填默认3分钟
+  &quot;Closetime&quot;: &quot;5&quot;,
+  //不要修改
+  &quot;Captchaurl&quot;: &quot;http://127.0.0.1:5000&quot;,
+  //网站公告
+  &quot;Announcement&quot;: &quot;为提高账户的安全性，请关闭免密支付。&quot;,
+  //Proxy 支持不带密码的socks5 以及http 
+  ///http  Proxy 只需要填写 ip:端口
+  /// Socks5 需要填写socks5://ip:端口 不能填写下方账户密码
+  &quot;Proxy&quot;: &quot;&quot;,
+  //Proxy帐号
+  &quot;ProxyUser&quot;: &quot;&quot;,
+  //Proxy密码
+  &quot;ProxyPass&quot;: &quot;&quot;,
+  ///开启打印等待日志卡短信验证登陆 可开启 拿到日志群里回复 默认不要填写
+  &quot;Debug&quot;: &quot;&quot;,
+  ///自动滑块次数5次 5次后手动滑块 可设置为0默认手动滑块
+  &quot;AutoCaptchaCount&quot;: &quot;5&quot;,
+  ///XDD PLUS Url  http://IP地址:端口/api/login/smslogin
+  &quot;XDDurl&quot;: &quot;&quot;,
+  ///xddToken
+  &quot;XDDToken&quot;: &quot;&quot;,
+  ///登陆预警 0 0 12 * * ?  每天中午十二点 https://www.bejson.com/othertools/cron/ 表达式在线生成网址
+  &quot;ExpirationCron&quot;: &quot; 0 0 12 * * ?&quot;,
+  ///个人资产 0 0 10,20 * * ?  早十点晚上八点
+  &quot;BeanCron&quot;: &quot;0 0 10,20 * * ?&quot;,
+  // ======================================= WxPusher 通知设置区域 ===========================================
+  // 此处填你申请的 appToken. 官方文档：https://wxpusher.zjiecode.com/docs
+  // WP_APP_TOKEN 可在管理台查看: https://wxpusher.zjiecode.com/admin/main/app/appToken
+  // MainWP_UID 填你自己uid
+  ///这里的通知只用于用户登陆 删除 是给你的通知
+  &quot;WP_APP_TOKEN&quot;: &quot;&quot;,
+  &quot;MainWP_UID&quot;: &quot;&quot;,
+  // ======================================= pushplus 通知设置区域 ===========================================
+  ///Push Plus官方网站：http&quot; //www.pushplus.plus  只有青龙模式有用
+  ///下方填写您的Token，微信扫码登录后一对一推送或一对多推送下面的token，只填&quot; &quot;PUSH_PLUS_TOKEN&quot;,
+  &quot;PUSH_PLUS_TOKEN&quot;: &quot;&quot;,
+  //下方填写您的一对多推送的 &quot;群组编码&quot; ，（一对多推送下面-&gt;您的群组(如无则新建)-&gt;群组编码）
+  &quot;PUSH_PLUS_USER&quot;: &quot;&quot;,
+  ///青龙配置  注意对接XDD 对接芝士 设置为&quot;Config&quot;:[]
+  &quot;Config&quot;: [
+    &#123;
+      //序号必填从1 开始
+      &quot;QLkey&quot;: 1,
+      //服务器名称
+      &quot;QLName&quot;: &quot;服务器&quot;,
+      //青龙地址
+      &quot;QLurl&quot;: &quot;http://ip:5700&quot;,
+      //青龙2,9 OpenApi Client ID
+      &quot;QL_CLIENTID&quot;: &quot;&quot;,
+      //青龙2,9 OpenApi Client Secret
+      &quot;QL_SECRET&quot;: &quot;&quot;,
+      //CK最大数量
+      &quot;QL_CAPACITY&quot;: 99,
+      ///建议一个青龙一个WxPusher 应用
+      &quot;WP_APP_TOKEN&quot;: &quot;&quot;
+    &#125;
+  ]
+&#125;
+</code></pre>
+<p>4.新增依赖文件夹chromium</p>
+<pre><code>cd /volume1/docker/Ark #cd到Ark目录
+
+mkdir -p .local-chromium/Linux-884014 &amp;&amp; cd .local-chromium/Linux-884014 #新建文件夹并cd过去
+
+wget https://mirrors.huaweicloud.com/chromium-browser-snapshots/Linux_x64/884014/chrome-linux.zip &amp;&amp; unzip chrome-linux.zip #下载并解压chromium
+
+rm -f chrome-linux.zip #删除刚刚下载的压缩包
+</code></pre>
+<p>5.命令部署</p>
+<pre><code>sudo docker run   --name ark1 -p 5701:80 -p 5000:5000 -d  -v  &quot;$(pwd)&quot;:/app/Ark \
+-v /etc/localtime:/etc/localtime:ro \
+-it --privileged=true  nolanhzy/ark:latest
+</code></pre>
+<p>6.更新方式</p>
+<pre><code>cd /root/Ark  #移动到安装目录
+docker stop ark  #停止Ark容器
+git pull  #拉取更新
+docker start ark  #启动容器
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>
