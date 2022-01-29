@@ -202,6 +202,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>服务器挂载蓝奏云</title>
+      <link href="/2021/11/12/lzy/"/>
+      <url>/2021/11/12/lzy/</url>
+      
+        <content type="html"><![CDATA[<h1 id="部署源码"><a href="#部署源码" class="headerlink" title="部署源码"></a>部署源码</h1><p>在WWW下部署好网页源码。</p><p>附件会提供下载。</p><h2 id="获取蓝奏云的COOKIE"><a href="#获取蓝奏云的COOKIE" class="headerlink" title="获取蓝奏云的COOKIE"></a>获取蓝奏云的COOKIE</h2><p>登录到蓝奏云的控制台里，执行如下命令</p><pre><code>if(!/(^|\.)woozooo\.com$/i.test(document.location.host))    throw new Error(&#39;请登录到蓝奏云控制台在执行此代码！&#39;);var regex = /(?&lt;=^|;)\s*([^=]+)=\s*(.+?)\s*(?=;|$)/g,    cookies = &#123;&#125;,re;while(re = regex.exec(document.cookie))    if(re[1] === &#39;ylogin&#39;||re[1] === &#39;phpdisk_info&#39;)        cookies[re[1]] = re[1]+&#39;=&#39;+re[2]+&#39;;&#39;;if(!cookies.hasOwnProperty(&#39;phpdisk_info&#39;))    throw new Error(&#39;获取cookie失败，请确认您已登录到蓝奏云控制台！&#39;);var copy = function (str) &#123;    var oInput = document.createElement(&#39;input&#39;);    oInput.value = str;    document.body.appendChild(oInput);    oInput.select();    document.execCommand(&quot;Copy&quot;);    oInput.remove();    alert(&#39;复制成功&#39;);&#125;copy(Object.values(cookies).join(&#39; &#39;));</code></pre><p>显示复制成功后，将源码中的cookie替换为自己的。</p><h2 id="配置网站伪静态"><a href="#配置网站伪静态" class="headerlink" title="配置网站伪静态"></a>配置网站伪静态</h2><p>Nginx配置：</p><pre><code>if (!-e $request_filename) &#123;    rewrite ^/(-1|\d+|[bi][a-zA-Z0-9]+)(\.[\w]+|/([^/]+))?$ /api.php?id=$1&amp;name=$3 break;&#125;</code></pre><p>Apache配置：</p><pre><code>RewriteEngine OnRewriteCond %&#123;REQUEST_FILENAME&#125; !-dRewriteCond %&#123;REQUEST_FILENAME&#125; !-fRewriteRule ^(-1|\d+|[bi][a-zA-Z0-9]+)(\.\w+|/([^/]+))?$ /api.php?id=$1&amp;name=$3 [QSA,L]</code></pre><p>附件：</p><p><a href="http://pan.cyblh.top/61189238.zip">网页源码</a>  <em>说明：可用宝塔部署。</em></p><blockquote><p>解压密码为123</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>

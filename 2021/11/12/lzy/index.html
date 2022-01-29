@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>技术于人 | 小陈书屋</title>
-  <meta name="keywords" content=" 思考 ">
-  <meta name="description" content="技术于人 | 小陈书屋">
+  <title>服务器挂载蓝奏云 | 小陈书屋</title>
+  <meta name="keywords" content=" 服务器 ">
+  <meta name="description" content="服务器挂载蓝奏云 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="青龙部署1.拉取镜像，这里提供两个版本。 官方镜像：docker pull whyour&#x2F;qinglong:latest  个人备份：docker pull cyblh&#x2F;qinglong:latest  #官方2.10.13版本  2.命令部署 docker run -dit \ -v $pwd&#x2F;ql&#x2F;config:&#x2F;ql&#x2F;config \ -v $pwd&#x2F;ql&#x2F;log:&#x2F;ql&#x2F;log \ -v">
 <meta property="og:type" content="article">
@@ -306,9 +306,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-punk" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-lzy" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">技术于人</h1>
+        <h1 class="article-title">服务器挂载蓝奏云</h1>
     
     <div class="article-meta">
         
@@ -318,7 +318,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="杂七杂八">杂七杂八</a>
+            <a  data-rel="折腾笔记">折腾笔记</a>
             
         </span>
         
@@ -326,19 +326,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">思考</a>
+            <a class="color4">服务器</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-01-28 21:39:12'>2021-11-21 21:16</time>
+            Created At : <time class="date" title='Updated At: 2022-01-29 23:44:49'>2021-11-12 12:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:464</span>
+        <span>Count:290</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -357,7 +357,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E6%BA%90%E7%A0%81"><span class="toc-text">部署源码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%93%9D%E5%A5%8F%E4%BA%91%E7%9A%84COOKIE"><span class="toc-text">获取蓝奏云的COOKIE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99%E4%BC%AA%E9%9D%99%E6%80%81"><span class="toc-text">配置网站伪静态</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -373,10 +373,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>赛博朋克实质上是技术的异化。</p>
-<p>人们使用技术的目的是为人服务，但科技的发展为垄断的产生提供了土壤、大数据及衍生技术的发展将人笼罩在信息化的铁幕下——科技的发展没有解放人、发展人、保护人，甚至于成为一种异己的、敌对的力量，危害社会、反制人类。</p>
-<p>以互联网行业为例，它风卷残云般席卷一个又一个传统行业。多年前我就感觉到，技术上带来的便利消费者都是要连本带利去还的，这把双刃剑永远是弊大于利。在你无意识中，就剥夺了你作为人的尊严，你只是一个由数据构成的综合体，而资本则在计算着你还有多少剩余价值。你甚至没有自主选择的权利，你以为你的网购决策是自己做的，其实是平台帮你做的，你甚至都没意识到。互联网的广告业真是人人得而诛之</p>
-<p>科技的发展同时缩短了人与人之间的距离，在大数据及智能推送算法的聚类与过滤之下，人们只能看到自己乐意看到的内容，一个社群内传播的内容不一定会在另一个社群内受欢迎，这导致平行文化和过滤气泡，主流仅仅存在于社群内部，区别于社群主流的异见者被筛选在社群之外，呈现社群外的边缘化趋向，这样的受众分化意味着公共空间的终结，是社会极化的标志，但最终边缘化也促成了稳定，人们被笼罩在信息技术控制下的巨大铁幕之中。</p>
+        <h1 id="部署源码"><a href="#部署源码" class="headerlink" title="部署源码"></a>部署源码</h1><p>在WWW下部署好网页源码。</p>
+<p>附件会提供下载。</p>
+<h2 id="获取蓝奏云的COOKIE"><a href="#获取蓝奏云的COOKIE" class="headerlink" title="获取蓝奏云的COOKIE"></a>获取蓝奏云的COOKIE</h2><p>登录到蓝奏云的控制台里，执行如下命令</p>
+<pre><code>if(!/(^|\.)woozooo\.com$/i.test(document.location.host))
+    throw new Error(&#39;请登录到蓝奏云控制台在执行此代码！&#39;);
+
+var regex = /(?&lt;=^|;)\s*([^=]+)=\s*(.+?)\s*(?=;|$)/g,
+    cookies = &#123;&#125;,re;
+while(re = regex.exec(document.cookie))
+    if(re[1] === &#39;ylogin&#39;||re[1] === &#39;phpdisk_info&#39;)
+        cookies[re[1]] = re[1]+&#39;=&#39;+re[2]+&#39;;&#39;;
+
+if(!cookies.hasOwnProperty(&#39;phpdisk_info&#39;))
+    throw new Error(&#39;获取cookie失败，请确认您已登录到蓝奏云控制台！&#39;);
+
+var copy = function (str) &#123;
+    var oInput = document.createElement(&#39;input&#39;);
+    oInput.value = str;
+    document.body.appendChild(oInput);
+    oInput.select();
+    document.execCommand(&quot;Copy&quot;);
+    oInput.remove();
+    alert(&#39;复制成功&#39;);
+&#125;
+
+copy(Object.values(cookies).join(&#39; &#39;));
+</code></pre>
+<p>显示复制成功后，将源码中的cookie替换为自己的。</p>
+<h2 id="配置网站伪静态"><a href="#配置网站伪静态" class="headerlink" title="配置网站伪静态"></a>配置网站伪静态</h2><p>Nginx配置：</p>
+<pre><code>if (!-e $request_filename) &#123;
+    rewrite ^/(-1|\d+|[bi][a-zA-Z0-9]+)(\.[\w]+|/([^/]+))?$ /api.php?id=$1&amp;name=$3 break;
+&#125;
+</code></pre>
+<p>Apache配置：</p>
+<pre><code>RewriteEngine On
+
+RewriteCond %&#123;REQUEST_FILENAME&#125; !-d
+RewriteCond %&#123;REQUEST_FILENAME&#125; !-f
+RewriteRule ^(-1|\d+|[bi][a-zA-Z0-9]+)(\.\w+|/([^/]+))?$ /api.php?id=$1&amp;name=$3 [QSA,L]
+</code></pre>
+<p>附件：</p>
+<p><a target="_blank" rel="noopener" href="http://pan.cyblh.top/61189238.zip">网页源码</a>  <em>说明：可用宝塔部署。</em></p>
+<blockquote>
+<p>解压密码为123</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>
