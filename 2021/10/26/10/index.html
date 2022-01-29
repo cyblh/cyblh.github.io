@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>修改微信、支付宝步数 | 小陈书屋</title>
+  <meta name="keywords" content=" 步数修改 ">
+  <meta name="description" content="修改微信、支付宝步数 | 小陈书屋">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="青龙部署1.拉取镜像，这里提供两个版本。 官方镜像：docker pull whyour&#x2F;qinglong:latest  个人备份：docker pull cyblh&#x2F;qinglong:latest  #官方2.10.13版本  2.命令部署 docker run -dit \ -v $pwd&#x2F;ql&#x2F;config:&#x2F;ql&#x2F;config \ -v $pwd&#x2F;ql&#x2F;log:&#x2F;ql&#x2F;log \ -v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker部署青龙">
+<meta property="og:url" content="https://cyblh.github.io/2022/01/26/8/index.html">
+<meta property="og:site_name" content="小陈书屋">
+<meta property="og:description" content="青龙部署1.拉取镜像，这里提供两个版本。 官方镜像：docker pull whyour&#x2F;qinglong:latest  个人备份：docker pull cyblh&#x2F;qinglong:latest  #官方2.10.13版本  2.命令部署 docker run -dit \ -v $pwd&#x2F;ql&#x2F;config:&#x2F;ql&#x2F;config \ -v $pwd&#x2F;ql&#x2F;log:&#x2F;ql&#x2F;log \ -v">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-26T14:16:34.000Z">
+<meta property="article:modified_time" content="2022-01-28T13:27:55.072Z">
+<meta property="article:author" content="小陈不厉害">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>小陈不厉害</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(10)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="折腾笔记">
+                        
+                        折腾笔记
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="分享故事">
+                        
+                        分享故事
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="杂七杂八">
+                        
+                        杂七杂八
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="资源整理">
+                        
+                        资源整理
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="10">
+<input type="hidden" id="yelog_site_word_count" value="9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://cyblh.top">我的主页</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>步数修改</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>读书</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>服务器</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>思考</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>一些故事</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>QQBOT</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="All 折腾笔记 "
+           href="/2022/01/26/8/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Docker部署青龙">Docker部署青龙</span>
+            <span class="post-date" title="2022-01-26 22:16:34">2022/01/26</span>
+        </a>
+        
+        <a  class="All 折腾笔记 "
+           href="/2022/01/23/7/"
+           data-tag="QQBOT"
+           data-author="" >
+            <span class="post-title" title="sillyGirl对接QQBOT">sillyGirl对接QQBOT</span>
+            <span class="post-date" title="2022-01-23 21:16:34">2022/01/23</span>
+        </a>
+        
+        <a  class="All 折腾笔记 "
+           href="/2022/01/20/1/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="腾讯云安装Docker">腾讯云安装Docker</span>
+            <span class="post-date" title="2022-01-20 12:12:57">2022/01/20</span>
+        </a>
+        
+        <a  class="All 分享故事 "
+           href="/2022/01/06/4/"
+           data-tag="一些故事"
+           data-author="" >
+            <span class="post-title" title="老屋">老屋</span>
+            <span class="post-date" title="2022-01-06 19:44:49">2022/01/06</span>
+        </a>
+        
+        <a  class="All 杂七杂八 "
+           href="/2021/12/21/2/"
+           data-tag="读书"
+           data-author="" >
+            <span class="post-title" title="《红楼梦》有感">《红楼梦》有感</span>
+            <span class="post-date" title="2021-12-21 19:41:36">2021/12/21</span>
+        </a>
+        
+        <a  class="All 分享故事 "
+           href="/2021/12/16/3/"
+           data-tag="一些故事"
+           data-author="" >
+            <span class="post-title" title="活着">活着</span>
+            <span class="post-date" title="2021-12-16 21:23:01">2021/12/16</span>
+        </a>
+        
+        <a  class="All 分享故事 "
+           href="/2021/12/08/9/"
+           data-tag="一些故事"
+           data-author="" >
+            <span class="post-title" title="公道">公道</span>
+            <span class="post-date" title="2021-12-08 19:53:12">2021/12/08</span>
+        </a>
+        
+        <a  class="All 杂七杂八 "
+           href="/2021/11/21/6/"
+           data-tag="思考"
+           data-author="" >
+            <span class="post-title" title="技术于人">技术于人</span>
+            <span class="post-date" title="2021-11-21 21:16:34">2021/11/21</span>
+        </a>
+        
+        <a  class="All 折腾笔记 "
+           href="/2021/11/12/5/"
+           data-tag="服务器"
+           data-author="" >
+            <span class="post-title" title="服务器挂载蓝奏云">服务器挂载蓝奏云</span>
+            <span class="post-date" title="2021-11-12 12:12:57">2021/11/12</span>
+        </a>
+        
+        <a  class="All 资源整理 "
+           href="/2021/10/26/10/"
+           data-tag="步数修改"
+           data-author="" >
+            <span class="post-title" title="修改微信、支付宝步数">修改微信、支付宝步数</span>
+            <span class="post-date" title="2021-10-26 22:16:34">2021/10/26</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-10" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">修改微信、支付宝步数</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="资源整理">资源整理</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">步数修改</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-01-29 23:52:36'>2021-10-26 22:16</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:4.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-text">源码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%93%81"><span class="toc-text">成品</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><pre><code># -*- coding: utf8 -*-
+# python版本 &gt;=3.8
+ 
+import requests,time,re,json,random
+ 
+now = time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime())
+headers = &#123;
+        &#39;User-Agent&#39;: &#39;Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/20.6.18)&#39;
+        &#125;
+  
+#获取登录code
+def get_code(location):
+    code_pattern = re.compile(&quot;(?&lt;=access=).*?(?=&amp;)&quot;)
+    code = code_pattern.findall(location)[0]
+    return code
+  
+#登录
+def login(user,password):
+    url1 = &quot;https://api-user.huami.com/registrations/+86&quot; + user + &quot;/tokens&quot;
+    headers = &#123;
+        &quot;Content-Type&quot;:&quot;application/x-www-form-urlencoded;charset=UTF-8&quot;,
+    &quot;User-Agent&quot;:&quot;MiFit/4.6.0 (iPhone; iOS 14.0.1; Scale/2.00)&quot;
+        &#125;
+    data1 = &#123;
+        &quot;client_id&quot;:&quot;HuaMi&quot;,
+        &quot;password&quot;:f&quot;&#123;password&#125;&quot;,
+        &quot;redirect_uri&quot;:&quot;https://s3-us-west-2.amazonaws.com/hm-registration/successsignin.html&quot;,
+        &quot;token&quot;:&quot;access&quot;
+        &#125;
+    r1 = requests.post(url1,data=data1,headers=headers,allow_redirects=False)
+    try:
+        location = r1.headers[&quot;Location&quot;]
+        code = get_code(location)
+    except:
+        return 0,0
+    #print(&quot;access_code获取成功！&quot;)
+    #print(code)
+      
+    url2 = &quot;https://account.huami.com/v2/client/login&quot;
+    data2 = &#123;
+        &quot;app_name&quot;:&quot;com.xiaomi.hm.health&quot;,
+        &quot;app_version&quot;:&quot;4.6.0&quot;,
+        &quot;code&quot;:f&quot;&#123;code&#125;&quot;,
+        &quot;country_code&quot;:&quot;CN&quot;,
+        &quot;device_id&quot;:&quot;2C8B4939-0CCD-4E94-8CBA-CB8EA6E613A1&quot;,
+        &quot;device_model&quot;:&quot;phone&quot;,
+        &quot;grant_type&quot;:&quot;access_token&quot;,
+        &quot;third_name&quot;:&quot;huami_phone&quot;,
+        &#125; 
+    r2 = requests.post(url2,data=data2,headers=headers).json()
+    login_token = r2[&quot;token_info&quot;][&quot;login_token&quot;]
+    #print(&quot;login_token获取成功！&quot;)
+    #print(login_token)
+    userid = r2[&quot;token_info&quot;][&quot;user_id&quot;]
+    #print(&quot;userid获取成功！&quot;)
+    #print(userid)
+  
+    return login_token,userid
+  
+#主函数
+def main(user, passwd, step):
+    user = str(user)
+    password = str(passwd)
+    step = str(step)
+    if user == &#39;&#39; or password == &#39;&#39;:
+        print (&quot;用户名或密码不能为空！&quot;)
+        return &quot;user and passwd not empty！&quot;
+     
+    if step == &#39;&#39;:
+        print (&quot;已设置为随机步数（24000-25000）&quot;)
+        step = str(random.randint(16000,16500))
+    login_token = 0
+    login_token,userid = login(user,password)
+    if login_token == 0:
+        print(&quot;登陆失败！&quot;)
+        return &quot;login fail!&quot;
+  
+    t = get_time()
+      
+    app_token = get_app_token(login_token)
+  
+    today = time.strftime(&quot;%F&quot;)
+  
+    data_json = &#39;%5B%7B%22data_hr%22%3A%22%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F9L%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FVv%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F0v%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F9e%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F0n%5C%2Fa%5C%2F%5C%2F%5C%2FS%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F0b%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F1FK%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FR%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F9PTFFpaf9L%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FR%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F0j%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F9K%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FOv%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2Fzf%5C%2F%5C%2F%5C%2F86%5C%2Fzr%5C%2FOv88%5C%2Fzf%5C%2FPf%5C%2F%5C%2F%5C%2F0v%5C%2FS%5C%2F8%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FSf%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2Fz3%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F0r%5C%2FOv%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FS%5C%2F9L%5C%2Fzb%5C%2FSf9K%5C%2F0v%5C%2FRf9H%5C%2Fzj%5C%2FSf9K%5C%2F0%5C%2F%5C%2FN%5C%2F%5C%2F%5C%2F%5C%2F0D%5C%2FSf83%5C%2Fzr%5C%2FPf9M%5C%2F0v%5C%2FOv9e%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FS%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2Fzv%5C%2F%5C%2Fz7%5C%2FO%5C%2F83%5C%2Fzv%5C%2FN%5C%2F83%5C%2Fzr%5C%2FN%5C%2F86%5C%2Fz%5C%2F%5C%2FNv83%5C%2Fzn%5C%2FXv84%5C%2Fzr%5C%2FPP84%5C%2Fzj%5C%2FN%5C%2F9e%5C%2Fzr%5C%2FN%5C%2F89%5C%2F03%5C%2FP%5C%2F89%5C%2Fz3%5C%2FQ%5C%2F9N%5C%2F0v%5C%2FTv9C%5C%2F0H%5C%2FOf9D%5C%2Fzz%5C%2FOf88%5C%2Fz%5C%2F%5C%2FPP9A%5C%2Fzr%5C%2FN%5C%2F86%5C%2Fzz%5C%2FNv87%5C%2F0D%5C%2FOv84%5C%2F0v%5C%2FO%5C%2F84%5C%2Fzf%5C%2FMP83%5C%2FzH%5C%2FNv83%5C%2Fzf%5C%2FN%5C%2F84%5C%2Fzf%5C%2FOf82%5C%2Fzf%5C%2FOP83%5C%2Fzb%5C%2FMv81%5C%2FzX%5C%2FR%5C%2F9L%5C%2F0v%5C%2FO%5C%2F9I%5C%2F0T%5C%2FS%5C%2F9A%5C%2Fzn%5C%2FPf89%5C%2Fzn%5C%2FNf9K%5C%2F07%5C%2FN%5C%2F83%5C%2Fzn%5C%2FNv83%5C%2Fzv%5C%2FO%5C%2F9A%5C%2F0H%5C%2FOf8%5C%2F%5C%2Fzj%5C%2FPP83%5C%2Fzj%5C%2FS%5C%2F87%5C%2Fzj%5C%2FNv84%5C%2Fzf%5C%2FOf83%5C%2Fzf%5C%2FOf83%5C%2Fzb%5C%2FNv9L%5C%2Fzj%5C%2FNv82%5C%2Fzb%5C%2FN%5C%2F85%5C%2Fzf%5C%2FN%5C%2F9J%5C%2Fzf%5C%2FNv83%5C%2Fzj%5C%2FNv84%5C%2F0r%5C%2FSv83%5C%2Fzf%5C%2FMP%5C%2F%5C%2F%5C%2Fzb%5C%2FMv82%5C%2Fzb%5C%2FOf85%5C%2Fz7%5C%2FNv8%5C%2F%5C%2F0r%5C%2FS%5C%2F85%5C%2F0H%5C%2FQP9B%5C%2F0D%5C%2FNf89%5C%2Fzj%5C%2FOv83%5C%2Fzv%5C%2FNv8%5C%2F%5C%2F0f%5C%2FSv9O%5C%2F0ZeXv%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F1X%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F9B%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2FTP%5C%2F%5C%2F%5C%2F1b%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F0%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F9N%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2F%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%5C%2Fv7%2B%22%2C%22date%22%3A%222021-08-07%22%2C%22data%22%3A%5B%7B%22start%22%3A0%2C%22stop%22%3A1439%2C%22value%22%3A%22UA8AUBQAUAwAUBoAUAEAYCcAUBkAUB4AUBgAUCAAUAEAUBkAUAwAYAsAYB8AYB0AYBgAYCoAYBgAYB4AUCcAUBsAUB8AUBwAUBIAYBkAYB8AUBoAUBMAUCEAUCIAYBYAUBwAUCAAUBgAUCAAUBcAYBsAYCUAATIPYD0KECQAYDMAYB0AYAsAYCAAYDwAYCIAYB0AYBcAYCQAYB0AYBAAYCMAYAoAYCIAYCEAYCYAYBsAYBUAYAYAYCIAYCMAUB0AUCAAUBYAUCoAUBEAUC8AUB0AUBYAUDMAUDoAUBkAUC0AUBQAUBwAUA0AUBsAUAoAUCEAUBYAUAwAUB4AUAwAUCcAUCYAUCwKYDUAAUUlEC8IYEMAYEgAYDoAYBAAUAMAUBkAWgAAWgAAWgAAWgAAWgAAUAgAWgAAUBAAUAQAUA4AUA8AUAkAUAIAUAYAUAcAUAIAWgAAUAQAUAkAUAEAUBkAUCUAWgAAUAYAUBEAWgAAUBYAWgAAUAYAWgAAWgAAWgAAWgAAUBcAUAcAWgAAUBUAUAoAUAIAWgAAUAQAUAYAUCgAWgAAUAgAWgAAWgAAUAwAWwAAXCMAUBQAWwAAUAIAWgAAWgAAWgAAWgAAWgAAWgAAWgAAWgAAWREAWQIAUAMAWSEAUDoAUDIAUB8AUCEAUC4AXB4AUA4AWgAAUBIAUA8AUBAAUCUAUCIAUAMAUAEAUAsAUAMAUCwAUBYAWgAAWgAAWgAAWgAAWgAAWgAAUAYAWgAAWgAAWgAAUAYAWwAAWgAAUAYAXAQAUAMAUBsAUBcAUCAAWwAAWgAAWgAAWgAAWgAAUBgAUB4AWgAAUAcAUAwAWQIAWQkAUAEAUAIAWgAAUAoAWgAAUAYAUB0AWgAAWgAAUAkAWgAAWSwAUBIAWgAAUC4AWSYAWgAAUAYAUAoAUAkAUAIAUAcAWgAAUAEAUBEAUBgAUBcAWRYAUA0AWSgAUB4AUDQAUBoAXA4AUA8AUBwAUA8AUA4AUA4AWgAAUAIAUCMAWgAAUCwAUBgAUAYAUAAAUAAAUAAAUAAAUAAAUAAAUAAAUAAAUAAAWwAAUAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAeSEAeQ8AcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcBcAcAAAcAAAcCYOcBUAUAAAUAAAUAAAUAAAUAUAUAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcCgAeQAAcAAAcAAAcAAAcAAAcAAAcAYAcAAAcBgAeQAAcAAAcAAAegAAegAAcAAAcAcAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcCkAeQAAcAcAcAAAcAAAcAwAcAAAcAAAcAIAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcCIAeQAAcAAAcAAAcAAAcAAAcAAAeRwAeQAAWgAAUAAAUAAAUAAAUAAAUAAAcAAAcAAAcBoAeScAeQAAegAAcBkAeQAAUAAAUAAAUAAAUAAAUAAAUAAAcAAAcAAAcAAAcAAAcAAAcAAAegAAegAAcAAAcAAAcBgAeQAAcAAAcAAAcAAAcAAAcAAAcAkAegAAegAAcAcAcAAAcAcAcAAAcAAAcAAAcAAAcA8AeQAAcAAAcAAAeRQAcAwAUAAAUAAAUAAAUAAAUAAAUAAAcAAAcBEAcA0AcAAAWQsAUAAAUAAAUAAAUAAAUAAAcAAAcAoAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAYAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcBYAegAAcAAAcAAAegAAcAcAcAAAcAAAcAAAcAAAcAAAeRkAegAAegAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAEAcAAAcAAAcAAAcAUAcAQAcAAAcBIAeQAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcBsAcAAAcAAAcBcAeQAAUAAAUAAAUAAAUAAAUAAAUBQAcBYAUAAAUAAAUAoAWRYAWTQAWQAAUAAAUAAAUAAAcAAAcAAAcAAAcAAAcAAAcAMAcAAAcAQAcAAAcAAAcAAAcDMAeSIAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcAAAcBQAeQwAcAAAcAAAcAAAcAMAcAAAeSoAcA8AcDMAcAYAeQoAcAwAcFQAcEMAeVIAaTYAbBcNYAsAYBIAYAIAYAIAYBUAYCwAYBMAYDYAYCkAYDcAUCoAUCcAUAUAUBAAWgAAYBoAYBcAYCgAUAMAUAYAUBYAUA4AUBgAUAgAUAgAUAsAUAsAUA4AUAMAUAYAUAQAUBIAASsSUDAAUDAAUBAAYAYAUBAAUAUAUCAAUBoAUCAAUBAAUAoAYAIAUAQAUAgAUCcAUAsAUCIAUCUAUAoAUA4AUB8AUBkAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAAfgAA%22%2C%22tz%22%3A32%2C%22did%22%3A%22DA932FFFFE8816E7%22%2C%22src%22%3A24%7D%5D%2C%22summary%22%3A%22%7B%5C%22v%5C%22%3A6%2C%5C%22slp%5C%22%3A%7B%5C%22st%5C%22%3A1628296479%2C%5C%22ed%5C%22%3A1628296479%2C%5C%22dp%5C%22%3A0%2C%5C%22lt%5C%22%3A0%2C%5C%22wk%5C%22%3A0%2C%5C%22usrSt%5C%22%3A-1440%2C%5C%22usrEd%5C%22%3A-1440%2C%5C%22wc%5C%22%3A0%2C%5C%22is%5C%22%3A0%2C%5C%22lb%5C%22%3A0%2C%5C%22to%5C%22%3A0%2C%5C%22dt%5C%22%3A0%2C%5C%22rhr%5C%22%3A0%2C%5C%22ss%5C%22%3A0%7D%2C%5C%22stp%5C%22%3A%7B%5C%22ttl%5C%22%3A18272%2C%5C%22dis%5C%22%3A10627%2C%5C%22cal%5C%22%3A510%2C%5C%22wk%5C%22%3A41%2C%5C%22rn%5C%22%3A50%2C%5C%22runDist%5C%22%3A7654%2C%5C%22runCal%5C%22%3A397%2C%5C%22stage%5C%22%3A%5B%7B%5C%22start%5C%22%3A327%2C%5C%22stop%5C%22%3A341%2C%5C%22mode%5C%22%3A1%2C%5C%22dis%5C%22%3A481%2C%5C%22cal%5C%22%3A13%2C%5C%22step%5C%22%3A680%7D%2C%7B%5C%22start%5C%22%3A342%2C%5C%22stop%5C%22%3A367%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A2295%2C%5C%22cal%5C%22%3A95%2C%5C%22step%5C%22%3A2874%7D%2C%7B%5C%22start%5C%22%3A368%2C%5C%22stop%5C%22%3A377%2C%5C%22mode%5C%22%3A4%2C%5C%22dis%5C%22%3A1592%2C%5C%22cal%5C%22%3A88%2C%5C%22step%5C%22%3A1664%7D%2C%7B%5C%22start%5C%22%3A378%2C%5C%22stop%5C%22%3A386%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A1072%2C%5C%22cal%5C%22%3A51%2C%5C%22step%5C%22%3A1245%7D%2C%7B%5C%22start%5C%22%3A387%2C%5C%22stop%5C%22%3A393%2C%5C%22mode%5C%22%3A4%2C%5C%22dis%5C%22%3A1036%2C%5C%22cal%5C%22%3A57%2C%5C%22step%5C%22%3A1124%7D%2C%7B%5C%22start%5C%22%3A394%2C%5C%22stop%5C%22%3A398%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A488%2C%5C%22cal%5C%22%3A19%2C%5C%22step%5C%22%3A607%7D%2C%7B%5C%22start%5C%22%3A399%2C%5C%22stop%5C%22%3A414%2C%5C%22mode%5C%22%3A4%2C%5C%22dis%5C%22%3A2220%2C%5C%22cal%5C%22%3A120%2C%5C%22step%5C%22%3A2371%7D%2C%7B%5C%22start%5C%22%3A415%2C%5C%22stop%5C%22%3A427%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A1268%2C%5C%22cal%5C%22%3A59%2C%5C%22step%5C%22%3A1489%7D%2C%7B%5C%22start%5C%22%3A428%2C%5C%22stop%5C%22%3A433%2C%5C%22mode%5C%22%3A1%2C%5C%22dis%5C%22%3A152%2C%5C%22cal%5C%22%3A4%2C%5C%22step%5C%22%3A238%7D%2C%7B%5C%22start%5C%22%3A434%2C%5C%22stop%5C%22%3A444%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A2295%2C%5C%22cal%5C%22%3A95%2C%5C%22step%5C%22%3A2874%7D%2C%7B%5C%22start%5C%22%3A445%2C%5C%22stop%5C%22%3A455%2C%5C%22mode%5C%22%3A4%2C%5C%22dis%5C%22%3A1592%2C%5C%22cal%5C%22%3A88%2C%5C%22step%5C%22%3A1664%7D%2C%7B%5C%22start%5C%22%3A456%2C%5C%22stop%5C%22%3A466%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A1072%2C%5C%22cal%5C%22%3A51%2C%5C%22step%5C%22%3A1245%7D%2C%7B%5C%22start%5C%22%3A467%2C%5C%22stop%5C%22%3A477%2C%5C%22mode%5C%22%3A4%2C%5C%22dis%5C%22%3A1036%2C%5C%22cal%5C%22%3A57%2C%5C%22step%5C%22%3A1124%7D%2C%7B%5C%22start%5C%22%3A478%2C%5C%22stop%5C%22%3A488%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A488%2C%5C%22cal%5C%22%3A19%2C%5C%22step%5C%22%3A607%7D%2C%7B%5C%22start%5C%22%3A489%2C%5C%22stop%5C%22%3A499%2C%5C%22mode%5C%22%3A4%2C%5C%22dis%5C%22%3A2220%2C%5C%22cal%5C%22%3A120%2C%5C%22step%5C%22%3A2371%7D%2C%7B%5C%22start%5C%22%3A500%2C%5C%22stop%5C%22%3A511%2C%5C%22mode%5C%22%3A3%2C%5C%22dis%5C%22%3A1268%2C%5C%22cal%5C%22%3A59%2C%5C%22step%5C%22%3A1489%7D%2C%7B%5C%22start%5C%22%3A512%2C%5C%22stop%5C%22%3A522%2C%5C%22mode%5C%22%3A1%2C%5C%22dis%5C%22%3A152%2C%5C%22cal%5C%22%3A4%2C%5C%22step%5C%22%3A238%7D%5D%7D%2C%5C%22goal%5C%22%3A8000%2C%5C%22tz%5C%22%3A%5C%2228800%5C%22%7D%22%2C%22source%22%3A24%2C%22type%22%3A0%7D%5D&#39;
+  
+    finddate = re.compile(r&#39;.*?date%22%3A%22(.*?)%22%2C%22data.*?&#39;)
+    findstep = re.compile(r&#39;.*?ttl%5C%22%3A(.*?)%2C%5C%22dis.*?&#39;)
+    data_json = re.sub(finddate.findall(data_json)[0], today, str(data_json))
+    data_json = re.sub(findstep.findall(data_json)[0], step, str(data_json))
+      
+    url = f&#39;https://api-mifit-cn.huami.com/v1/data/band_data.json?&amp;t=&#123;t&#125;&#39;
+    head = &#123;
+        &quot;apptoken&quot;: app_token,
+        &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;
+        &#125;
+      
+    data = f&#39;userid=&#123;userid&#125;&amp;last_sync_data_time=1597306380&amp;device_type=0&amp;last_deviceid=DA932FFFFE8816E7&amp;data_json=&#123;data_json&#125;&#39;
+     
+    response = requests.post(url, data=data, headers=head).json()
+    #print(response)
+    result = f&quot;&#123;user[:4]&#125;****&#123;user[-4:]&#125;: [&#123;now&#125;] 修改步数（&#123;step&#125;）&quot;+ response[&#39;message&#39;]
+    print(result)
+    return result
+   
+#获取时间戳
+def get_time():
+    url = &#39;http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp&#39;
+    response = requests.get(url,headers=headers).json()
+    t = response[&#39;data&#39;][&#39;t&#39;]
+    return t
+   
+#获取app_token
+def get_app_token(login_token):
+    url = f&quot;https://account-cn.huami.com/v1/client/app_tokens?app_name=com.xiaomi.hm.health&amp;dn=api-user.huami.com%2Capi-mifit.huami.com%2Capp-analytics.huami.com&amp;login_token=&#123;login_token&#125;&quot;
+    response = requests.get(url,headers=headers).json()
+    app_token = response[&#39;token_info&#39;][&#39;app_token&#39;]
+    #print(&quot;app_token获取成功！&quot;)
+    #print(app_token)
+    return app_token
+ 
+# 推送server酱
+def push_wx(sckey, desp=&quot;&quot;):
+    &quot;&quot;&quot;
+    推送消息到微信
+    &quot;&quot;&quot;
+    if sckey == &#39;&#39;:
+        print(&quot;[注意] 未提供sckey，不进行推送！&quot;)
+    else:
+        server_url = f&quot;https://sc.ftqq.com/&#123;sckey&#125;.send&quot;
+        params = &#123;
+            &quot;text&quot;: &#39;小米运动 步数修改&#39;,
+            &quot;desp&quot;: desp
+        &#125;
+  
+        response = requests.get(server_url, params=params)
+        json_data = response.json()
+  
+        if json_data[&#39;errno&#39;] == 0:
+            print(f&quot;[&#123;now&#125;] 推送成功。&quot;)
+        else:
+            print(f&quot;[&#123;now&#125;] 推送失败：&#123;json_data[&#39;errno&#39;]&#125;(&#123;json_data[&#39;errmsg&#39;]&#125;)&quot;)
+ 
+# 推送server
+def push_server(sckey, desp=&quot;&quot;):
+    &quot;&quot;&quot;
+    推送消息到微信
+    &quot;&quot;&quot;
+    if sckey == &#39;&#39;:
+        print(&quot;[注意] 未提供sckey，不进行微信推送！&quot;)
+    else:
+        server_url = f&quot;https://sctapi.ftqq.com/&#123;sckey&#125;.send&quot;
+        params = &#123;
+            &quot;title&quot;: &#39;小米运动 步数修改&#39;,
+            &quot;desp&quot;: desp
+        &#125;
+  
+        response = requests.get(server_url, params=params)
+        json_data = response.json()
+  
+        if json_data[&#39;code&#39;] == 0:
+            print(f&quot;[&#123;now&#125;] 推送成功。&quot;)
+        else:
+            print(f&quot;[&#123;now&#125;] 推送失败：&#123;json_data[&#39;code&#39;]&#125;(&#123;json_data[&#39;message&#39;]&#125;)&quot;)
+ 
+# 推送pushplus
+def push_pushplus(token, content=&quot;ff56035d64d14a0a91b494f671fe0353&quot;):
+    &quot;&quot;&quot;
+    推送消息到pushplus
+    &quot;&quot;&quot;
+    if token == &#39;&#39;:
+        print(&quot;[注意] 未提供token，不进行pushplus推送！&quot;)
+    else:
+        server_url = f&quot;http://www.pushplus.plus/send&quot;
+        params = &#123;
+            &quot;token&quot;: token,
+            &quot;title&quot;: &#39;小米运动 步数修改&#39;,
+            &quot;content&quot;: content
+        &#125;
+  
+        response = requests.get(server_url, params=params)
+        json_data = response.json()
+  
+        if json_data[&#39;code&#39;] == 200:
+            print(f&quot;[&#123;now&#125;] 推送成功。&quot;)
+        else:
+            print(f&quot;[&#123;now&#125;] 推送失败：&#123;json_data[&#39;code&#39;]&#125;(&#123;json_data[&#39;message&#39;]&#125;)&quot;)
+ 
+# 推送tg
+def push_tg(token, chat_id, desp=&quot;&quot;):
+    &quot;&quot;&quot;
+    推送消息到TG
+    &quot;&quot;&quot;
+    if token == &#39;&#39;:
+        print(&quot;[注意] 未提供token，不进行tg推送！&quot;)
+    elif chat_id == &#39;&#39;:
+        print(&quot;[注意] 未提供chat_id，不进行tg推送！&quot;)
+    else:
+        server_url = f&quot;https://api.telegram.org/bot&#123;token&#125;/sendmessage&quot;
+        params = &#123;
+            &quot;text&quot;: &#39;小米运动 步数修改\n\n&#39; + desp,
+            &quot;chat_id&quot;: chat_id
+        &#125;
+  
+        response = requests.get(server_url, params=params)
+        json_data = response.json()
+  
+        if json_data[&#39;ok&#39;] == True:
+            print(f&quot;[&#123;now&#125;] 推送成功。&quot;)
+        else:
+            print(f&quot;[&#123;now&#125;] 推送失败：&#123;json_data[&#39;error_code&#39;]&#125;(&#123;json_data[&#39;description&#39;]&#125;)&quot;)
+# 企业微信推送
+def wxpush(msg, usr, corpid, corpsecret, agentid=1000002):
+    base_url = &#39;https://qyapi.weixin.qq.com/cgi-bin/gettoken?&#39;
+    req_url = &#39;https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=&#39;
+    corpid = corpid
+    corpsecret = corpsecret
+    agentid = agentid
+ 
+    if agentid == 0:
+        agentid = 1000002
+ 
+    #获取access_token，每次的access_token都不一样，所以需要运行一次请求一次
+    def get_access_token(base_url, corpid, corpsecret):
+        urls = base_url + &#39;corpid=&#39; + corpid + &#39;&amp;corpsecret=&#39; + corpsecret
+        resp = requests.get(urls).json()
+        access_token = resp[&#39;access_token&#39;]
+        return access_token
+ 
+    def send_message(msg, usr):
+        data = get_message(msg, usr)
+        req_urls = req_url + get_access_token(base_url, corpid, corpsecret)
+        res = requests.post(url=req_urls, data=data)
+        ret = res.json()
+        if ret[&quot;errcode&quot;] == 0:
+            print(f&quot;[&#123;now&#125;] 企业微信推送成功&quot;)
+        else:
+            print(f&quot;[&#123;now&#125;] 推送失败：&#123;ret[&#39;errcode&#39;]&#125; 错误信息：&#123;ret[&#39;errmsg&#39;]&#125;&quot;)
+ 
+    def get_message(msg, usr):
+        data = &#123;
+            &quot;touser&quot;: usr,
+            &quot;toparty&quot;: &quot;@all&quot;,
+            &quot;totag&quot;: &quot;@all&quot;,
+            &quot;msgtype&quot;: &quot;text&quot;,
+            &quot;agentid&quot;: agentid,
+            &quot;text&quot;: &#123;
+                &quot;content&quot;: msg
+            &#125;,
+            &quot;safe&quot;: 0,
+            &quot;enable_id_trans&quot;: 0,
+            &quot;enable_duplicate_check&quot;: 0,
+            &quot;duplicate_check_interval&quot;: 1800
+        &#125;
+        data = json.dumps(data)
+        return data
+ 
+    msg = msg
+    usr = usr
+    if corpid == &#39;&#39;:
+        print(&quot;[注意] 未提供corpid，不进行企业微信推送！&quot;)
+    elif corpsecret == &#39;&#39;:
+        print(&quot;[注意] 未提供corpsecret，不进行企业微信推送！&quot;)
+    else:
+        send_message(msg, usr)
+ 
+if __name__ ==  &quot;__main__&quot;:
+    # Push Mode
+    Pm = &quot;off&quot;
+    if Pm == &#39;wx&#39; or Pm == &#39;nwx&#39;:
+        # ServerChan
+        sckey = input()
+        if str(sckey) == &#39;0&#39;:
+            sckey = &#39;&#39;
+    elif Pm == &#39;tg&#39;:
+        token = input()
+        sl = token.split(&#39;@&#39;)
+        if len(sl) != 2:
+            print(&#39;tg推送参数有误！&#39;)
+    elif Pm == &#39;qwx&#39;:
+        token = input()
+        sl = token.split(&#39;-&#39;)
+        if len(sl) &lt; 3:
+            print(&#39;企业微信推送参数有误！&#39;)
+    elif Pm == &#39;pp&#39;:
+        token = input()
+        if token == &#39;&#39;:
+            print(&#39;pushplus token错误&#39;)
+    elif Pm == &#39;off&#39;:
+        print(&#39;不推送&#39;)
+    else:
+        print(&#39;推送选项有误！&#39;)
+        exit(0)
+ 
+    # 用户名（格式为 1**********）
+    user = &quot;手机号&quot;
+    # 登录密码
+    passwd = &quot;密码&quot;
+    # 要修改的步数，直接输入想要修改的步数值，留空为随机步数
+    step =&quot;54321-65432&quot;
+ 
+    user_list = user.split(&#39;#&#39;)
+    passwd_list = passwd.split(&#39;#&#39;)
+    setp_array = step.split(&#39;-&#39;)
+ 
+    if len(user_list) == len(passwd_list):
+        push = &#39;&#39;
+        for line in range(0,len(user_list)):
+            if len(setp_array) == 2:
+                step = str(random.randint(int(setp_array[0]),int(setp_array[1])))
+                print (f&quot;已设置为随机步数（&#123;setp_array[0]&#125;-&#123;setp_array[1]&#125;）&quot;)
+            elif str(step) == &#39;0&#39;:
+                step = &#39;&#39;
+            push += main(user_list[line], passwd_list[line], step) + &#39;\n&#39;
+        if Pm == &#39;wx&#39;:
+            push_wx(sckey, push)
+        elif Pm == &#39;nwx&#39;:
+            push_server(sckey, push)
+        elif Pm == &#39;tg&#39;:
+            push_tg(sl[0], sl[1], push)
+        elif Pm == &#39;qwx&#39;:
+            if len(sl) == 4:
+                wxpush(push, sl[0], sl[1], sl[2], int(sl[3]))
+            else:
+                wxpush(push, sl[0], sl[1], sl[2])
+        elif Pm == &#39;pp&#39;:
+            push_pushplus(token, push)
+        elif Pm == &#39;off&#39;:
+            pass
+    else:
+        print(&#39;用户名和密码数量不对&#39;)
+    
+</code></pre>
+<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p><a target="_blank" rel="noopener" href="http://pan.cyblh.top/61189777.zip">运动步数修改</a></p>
+<blockquote>
+<p>解压密码为123</p>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> End </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2000-2022 CYBLH
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
