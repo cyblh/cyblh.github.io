@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>拯救者加内存、清灰</title>
+      <link href="/2022/02/01/11/"/>
+      <url>/2022/02/01/11/</url>
+      
+        <content type="html"><![CDATA[<h2 id="加内存"><a href="#加内存" class="headerlink" title="加内存"></a>加内存</h2><p>因为最近电脑内存不太够用了，所以萌生出加内存的想法。</p><p>话不多说，直接行动。</p><p>去京东买一个和本机内存条一样频率和大小的（一定要相同，要不然效果不会很好）。</p><p>就是下图这个三星内存条，</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234226.png"></p><p>到手之后就开始着手加装。</p><h3 id="第一步：拆后壳"><a href="#第一步：拆后壳" class="headerlink" title="第一步：拆后壳"></a>第一步：拆后壳</h3><p>1.后盖上的11个螺钉，上5下6拧下来摆成两堆放一边，上半部分螺丝长，下半部分的短。</p><p>2.用翘片从两侧排风口这里顺着边缘一点点划开，然后小心抠下来就可以了。</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201233903.png"></p><h3 id="第二步：装内存条"><a href="#第二步：装内存条" class="headerlink" title="第二步：装内存条"></a>第二步：<strong>装内存条</strong></h3><p>1.打开之后可以看到，<strong>中间的方壳子罩着的就是内存条</strong>，壳子扣的紧但是很好拆，四边是夹着的，没有螺丝，稍微用点力就打开了，也可以借助翘片</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201233749.jpg"></p><p>（忽略一下我的积灰，这次拆开之后才想起来要买清洁套装清灰）</p><p>2..有个空的内存条位置，<strong>斜着怼进去</strong>，向下一按，听到<strong>咔哒一声</strong>就是两侧都卡紧了，安装成功啦！<img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234503.png"></p><p>就像这样</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234624.png"></p><p>3.将屏蔽罩再装回去就好了。</p><h2 id="清灰"><a href="#清灰" class="headerlink" title="清灰"></a>清灰</h2><p>据说是要<strong>先除下静电</strong>最好，可以洗洗手，也可以摸一下接地导体</p><p><strong>1.拔电池排线：</strong>排线虽然没那么容易断，但是也要小心点<strong>从箭头处拔出，不好操作的话可以直接把电池拆下来</strong>，这样再拔排线就很好用力了。电源的螺丝也要放好一堆，最好和电池放在一起。</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234730.png"></p><p>2.<strong>拆散热铜管：</strong>铜管不拆风扇拿不下来，直接拧开几个弹簧螺丝，放在一边就可以啦。</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234821.png"></p><p>3.<strong>拆风扇：</strong>每个上面有两个同规格螺丝，拧下来放在一堆，风扇与笔记本的<strong>连接线</strong>小心拆，这线真真的看着就比较脆弱。</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234858.png"></p><p>4.<strong>清理灰尘</strong> ：建议买专业的清洁套装。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂七杂八 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 装机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>老屋</title>
       <link href="/2022/01/06/4/"/>
       <url>/2022/01/06/4/</url>
@@ -79,7 +104,7 @@
     
     
     <entry>
-      <title>腾讯云安装Docker</title>
+      <title>Linux安装Docker</title>
       <link href="/2022/01/01/1/"/>
       <url>/2022/01/01/1/</url>
       
@@ -233,7 +258,7 @@
       <link href="/2021/10/26/10/"/>
       <url>/2021/10/26/10/</url>
       
-        <content type="html"><![CDATA[<h2 id="安装PC端Docker"><a href="#安装PC端Docker" class="headerlink" title="安装PC端Docker"></a>安装PC端Docker</h2><p><a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module">PC端Docker下载</a> <em>说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。</em></p><p>下载完成后，安装过程一直点击下一步就可以。</p><p>安装完成后启动可能会报错提示：WSL2缺失。</p><p>这里提供WSL2的下载地址：<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2下载</a></p><p>WSL2下载完成后，点击Docker对话框的Restart就安装完成了。</p><h2 id="创建映射文件"><a href="#创建映射文件" class="headerlink" title="创建映射文件"></a>创建映射文件</h2><p>在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。</p><p>在Docker文件夹下创建ql文件夹。</p><p>在ql文件夹下依次创建如下文件夹。</p><p>config、log、db、repo、raw、scripts</p><p>这六个文件夹创建完成后，打开cmd窗口执行如下命令。（以D盘为例）</p><pre><code>D:\cd Dockerdocker run -dit -v D:/Docker/ql/config:/ql/config -v D:/Docker/ql/log:/ql/log -v D:/Docker/ql/db:/ql/db -v D:/Docker/ql/repo:/ql/repo -v D:/Docker/ql/raw:/ql/raw -v D:/Docker/ql/scripts:/ql/scripts -p 5700:5700 --name qinglong --hostname qinglong -e TZ=Asia/Shanghai --restart unless-stopped whyour/qinglong:latest</code></pre><p>执行命令后会自动下载镜像，并启动。</p><p>在Docker程序中可以看到创建的镜像。</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/1.jpg"></p><h3 id="启动镜像"><a href="#启动镜像" class="headerlink" title="启动镜像"></a>启动镜像</h3><p>在Docker中可以停止、启动镜像。</p><p>启动后访问<a href="http://localhost:5700即可访问创建的服务。">http://localhost:5700即可访问创建的服务。</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="安装PC端Docker"><a href="#安装PC端Docker" class="headerlink" title="安装PC端Docker"></a>安装PC端Docker</h2><p><a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module">PC端Docker下载</a> <em>说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。</em></p><p>下载完成后，安装过程一直点击下一步就可以。</p><p>安装完成后启动可能会报错提示：WSL2缺失。</p><p>这里提供WSL2的下载地址：<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2下载</a></p><p>WSL2下载完成后，点击Docker对话框的Restart就安装完成了。</p><h2 id="创建映射文件"><a href="#创建映射文件" class="headerlink" title="创建映射文件"></a>创建映射文件</h2><p>在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。</p><p>在Docker文件夹下创建ql文件夹。</p><p>在ql文件夹下依次创建如下文件夹。</p><p>config、log、db、repo、raw、scripts</p><p>这六个文件夹创建完成后，打开cmd窗口执行如下命令。（以D盘为例）</p><pre><code>D:\cd Dockerdocker run -dit -v D:/Docker/ql/config:/ql/config -v D:/Docker/ql/log:/ql/log -v D:/Docker/ql/db:/ql/db -v D:/Docker/ql/repo:/ql/repo -v D:/Docker/ql/raw:/ql/raw -v D:/Docker/ql/scripts:/ql/scripts -p 5700:5700 --name qinglong --hostname qinglong -e TZ=Asia/Shanghai --restart unless-stopped whyour/qinglong:latest</code></pre><p>执行命令后会自动下载镜像，并启动。</p><p>在Docker程序中可以看到创建的镜像。</p><p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/1.jpg"></p><h3 id="启动镜像"><a href="#启动镜像" class="headerlink" title="启动镜像"></a>启动镜像</h3><p>在Docker中可以停止、启动镜像。</p><p>启动后访问<a href="http://localhost:5700/">http://localhost:5700</a> 即可访问创建的服务。</p>]]></content>
       
       
       <categories>

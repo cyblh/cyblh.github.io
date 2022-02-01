@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux安装Docker | 小陈书屋</title>
-  <meta name="keywords" content=" Docker ">
-  <meta name="description" content="Linux安装Docker | 小陈书屋">
+  <title>拯救者加内存、清灰 | 小陈书屋</title>
+  <meta name="keywords" content=" 装机 ">
+  <meta name="description" content="拯救者加内存、清灰 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="加内存因为最近电脑内存不太够用了，所以萌生出加内存的想法。 话不多说，直接行动。 去京东买一个和本机内存条一样频率和大小的（一定要相同，要不然效果不会很好）。 就是下图这个三星内存条，  到手之后就开始着手加装。 第一步：拆后壳1.后盖上的11个螺钉，上5下6拧下来摆成两堆放一边，上半部分螺丝长，下半部分的短。 2.用翘片从两侧排风口这里顺着边缘一点点划开，然后小心抠下来就可以了。  第二步：装内">
 <meta property="og:type" content="article">
@@ -335,9 +335,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-11" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux安装Docker</h1>
+        <h1 class="article-title">拯救者加内存、清灰</h1>
     
     <div class="article-meta">
         
@@ -347,7 +347,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="折腾笔记">折腾笔记</a>
+            <a  data-rel="杂七杂八">杂七杂八</a>
             
         </span>
         
@@ -355,19 +355,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Docker</a>
+            <a class="color3">装机</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-01-30 16:42:39'>2022-01-01 12:12</time>
+            Created At : <time class="date" title='Updated At: 2022-02-01 23:50:32'>2022-02-01 20:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:145</span>
+        <span>Count:512</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -386,7 +386,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%86%85%E5%AD%98"><span class="toc-text">加内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%8B%86%E5%90%8E%E5%A3%B3"><span class="toc-text">第一步：拆后壳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E8%A3%85%E5%86%85%E5%AD%98%E6%9D%A1"><span class="toc-text">第二步：装内存条</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E7%81%B0"><span class="toc-text">清灰</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -402,34 +402,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.更新yum包</p>
-<pre><code>yum -y update
-</code></pre>
-<p>2.检测yum-utils状态</p>
-<pre><code>yum list installed | grep yum-utils
-</code></pre>
-<p>3.设置yum源：</p>
-<pre><code>sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre>
-<p>4.安卓Docker Engine，验证是否安装成功，并启动</p>
-<pre><code>yum install -y docker-ce docker-ce-cli containerd.io  #第一条命令
-
-docker -v  #第二条命令
-
-systemctl start docker  #第三条命令
-</code></pre>
-<p>5.修改下载源，不修改会导致下载速度很慢</p>
-<pre><code>sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
-&#123;
-  &quot;registry-mirrors&quot;: [&quot;https://plut5gv2.mirror.aliyuncs.com&quot;]
-&#125;
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</code></pre>
+        <h2 id="加内存"><a href="#加内存" class="headerlink" title="加内存"></a>加内存</h2><p>因为最近电脑内存不太够用了，所以萌生出加内存的想法。</p>
+<p>话不多说，直接行动。</p>
+<p>去京东买一个和本机内存条一样频率和大小的（一定要相同，要不然效果不会很好）。</p>
+<p>就是下图这个三星内存条，</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234226.png"></p>
+<p>到手之后就开始着手加装。</p>
+<h3 id="第一步：拆后壳"><a href="#第一步：拆后壳" class="headerlink" title="第一步：拆后壳"></a>第一步：拆后壳</h3><p>1.后盖上的11个螺钉，上5下6拧下来摆成两堆放一边，上半部分螺丝长，下半部分的短。</p>
+<p>2.用翘片从两侧排风口这里顺着边缘一点点划开，然后小心抠下来就可以了。</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201233903.png"></p>
+<h3 id="第二步：装内存条"><a href="#第二步：装内存条" class="headerlink" title="第二步：装内存条"></a>第二步：<strong>装内存条</strong></h3><p>1.打开之后可以看到，<strong>中间的方壳子罩着的就是内存条</strong>，壳子扣的紧但是很好拆，四边是夹着的，没有螺丝，稍微用点力就打开了，也可以借助翘片</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201233749.jpg"></p>
+<p>（忽略一下我的积灰，这次拆开之后才想起来要买清洁套装清灰）</p>
+<p>2..有个空的内存条位置，<strong>斜着怼进去</strong>，向下一按，听到<strong>咔哒一声</strong>就是两侧都卡紧了，安装成功啦！<img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234503.png"></p>
+<p>就像这样</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234624.png"></p>
+<p>3.将屏蔽罩再装回去就好了。</p>
+<h2 id="清灰"><a href="#清灰" class="headerlink" title="清灰"></a>清灰</h2><p>据说是要<strong>先除下静电</strong>最好，可以洗洗手，也可以摸一下接地导体</p>
+<p><strong>1.拔电池排线：</strong>排线虽然没那么容易断，但是也要小心点<strong>从箭头处拔出，不好操作的话可以直接把电池拆下来</strong>，这样再拔排线就很好用力了。电源的螺丝也要放好一堆，最好和电池放在一起。</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234730.png"></p>
+<p>2.<strong>拆散热铜管：</strong>铜管不拆风扇拿不下来，直接拧开几个弹簧螺丝，放在一边就可以啦。</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234821.png"></p>
+<p>3.<strong>拆风扇：</strong>每个上面有两个同规格螺丝，拧下来放在一堆，风扇与笔记本的<strong>连接线</strong>小心拆，这线真真的看着就比较脆弱。</p>
+<p><img src="https://gitee.com/lxk0301oo/image/raw/master/img/QQ%E5%9B%BE%E7%89%8720220201234858.png"></p>
+<p>4.<strong>清理灰尘</strong> ：建议买专业的清洁套装。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>
